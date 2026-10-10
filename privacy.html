@@ -3,37 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Privacy policy · Kyslap</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav><a href="./">Kyslap</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
 <h1>Privacy policy</h1>
-<p class="muted">Draft, last updated 2026-09-30. Covers the Kyslap closed-test version (Android).</p>
+<p class="muted">Draft, effective 2026-10-10. It covers the Kyslap closed-test version for Android and has not yet been reviewed by a lawyer.</p>
 
 <h2>The short version</h2>
-<p>Kyslap has no accounts and no ads in this version. Your interests, goal, reminder time, and reading history stay on your phone. The app does not send them to us or to anyone else.</p>
+<p>Kyslap has no accounts, no ads, no purchases, and no analytics in this version. Your interests, goal, reminder time, and reading history stay on your phone; the app does not send them to us. The app does two things over the network: it asks Wikipedia and Wikimedia Commons for the articles and images it shows, and it sends crash reports to Sentry (you can turn those off in Settings).</p>
+
+<h2>Who is responsible</h2>
+<p>Kyslap is made and published by an individual developer based in the Philippines (“we”). We write this policy with the Philippines’ Data Privacy Act of 2012 (Republic Act 10173) in mind. The person to contact about your data is the developer, at <a href="mailto:kyslap.app@gmail.com">kyslap.app@gmail.com</a>.</p>
 
 <h2>What stays on your phone</h2>
-<p>Kyslap stores these in a database on your device: the topics you picked, your daily goal, streak and reminder preferences, which articles you have seen, how you interacted with them (for example skipped or saved), per-topic statistics, your daily progress, and items queued for later review. The app uses them to choose what to show you next. Uninstalling the app or clearing its storage deletes all of it.</p>
+<p>Kyslap keeps a database in the app’s private storage on your phone. We never receive a copy of it. It holds:</p>
+<ul>
+<li><strong>Your choices:</strong> the topics you picked (and, as a list, every topic you have ever picked, even if you later switched it off), your daily goal, whether streaks are on, a reminder time (saved only; this version sends no notifications), and the crash-report switch.</li>
+<li><strong>What you have seen and done:</strong> which articles were shown to you (and which version), the articles you saved (their titles), and a skip list of articles the app could not turn into a bite. For each bite: how long you stayed, whether you swiped sideways, saved it, opened the full article, or marked it “not interested”. Also a log of what the app chose for you and why (the topic group and the chance it was picked), and your daily progress (how many bites you finished). It also keeps the titles and topics of the bites you finished today and your one-tap answer on whether the goal felt too short, right, or too long.</li>
+<li><strong>Bites ready to read:</strong> the next few bites (their text and image credits), fetched ahead so they work offline, and today’s bites, kept for up to 3 days so they survive closing the app.</li>
+<li><strong>Wikipedia answers kept to avoid asking again:</strong> search results for 6 hours, and article text and image details for 24 hours. The app’s image loader may also keep the photos you have seen on your phone.</li>
+<li><strong>A request counter:</strong> the times of recent requests to Wikipedia and an hourly limit the app has learned for you, so it stays within Wikimedia’s rules. It holds no article titles or search terms.</li>
+</ul>
+<p>The app uses these only to choose what to show you next. Nothing in this list is shared with anyone.</p>
 
 <h2>What is sent over the network</h2>
-<p>To show a bite, the app requests article excerpts and images from Wikipedia and Wikimedia Commons (services of the Wikimedia Foundation). Like any web request, this reveals your device's IP address and the request itself (for example, which article) to Wikimedia. Each request carries a User-Agent that names the app and this website, as Wikimedia's API policy asks; it contains no personal identifier. Wikimedia handles that data under its own <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a>. When you follow a link to an article or a license, your phone's browser opens that site directly.</p>
+<p><strong>To Wikipedia and Wikimedia Commons</strong> (run by the Wikimedia Foundation). To build a bite, the app requests article excerpts and image details, and your phone then loads the images. Like any web request, this reveals your device’s IP address and the request itself to Wikimedia: for example the topic it is searching for, an article title, an image file name, or the request for Wikipedia’s featured article of the day. Each request carries a User-Agent that names the app, its version, and this website, as Wikimedia’s API policy asks; it contains no personal identifier. Wikimedia handles that data under its own <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a>.</p>
+<p><strong>When you open an article or a license.</strong> “Read full article” opens the Wikipedia page in a browser tab shown inside Kyslap. That tab is run by your phone’s own browser, so your browser’s cookies, sign-ins, and settings apply there, and the app cannot see what you do in it. Links to licenses and to this website open your phone’s browser directly. Those sites handle your data under their own policies.</p>
+<p><strong>Crash reports, to Sentry.</strong> Kyslap sends crash reports to Sentry (Functional Software, Inc.) so we can fix bugs. A report contains the error message, the app’s code trace at the moment of the crash, the app version, basic device details such as the Android version and phone model, and whether it is a test or a release build, and a random ID created when the app is installed, so we can tell how many phones hit the same bug. That ID is not linked to your name or account, and it resets if you reinstall the app. We do not send the app’s database, and reports do not include your name or email address. An error message can still contain the Wikipedia address the app was fetching at the time, which names a topic or article. We turned off screenshots, session replay, performance tracing, and usage tracking, and the app removes network, navigation, and console notes from reports. We do not send your IP address on purpose and have asked Sentry not to store it (Sentry’s servers still see it when the report arrives). Sentry handles the reports under its own <a href="https://sentry.io/privacy/">privacy policy</a>. Crash reports are on by default and are sent only from release builds; turn them off in Settings under “Send crash reports”. Errors stop being sent at once, and the native crash handler stops after you restart the app.</p>
+
+<h2>Why we use data, and on what basis</h2>
+<p>We use what is on your phone to run the app and to choose bites for you, because you asked the app to do that when you installed it and picked topics. We use crash reports to find and fix bugs, because that is in the interest of everyone who uses the app, and you can switch them off at any time.</p>
+
+<h2>Who else receives data</h2>
+<p>Only two outside parties receive anything from the app, and each acts for its own service: the Wikimedia Foundation (requests for articles and images) and Sentry (crash reports, if on). We do not sell data, and we do not share it for advertising. There are no ads, advertising IDs, or analytics tools in this version.</p>
 
 <h2>Notifications</h2>
-<p>You can choose a reminder time, which is saved on your phone with your other settings. This version does not send notifications. If a later version does, this policy will say how before it is released.</p>
+<p>You can choose a reminder time, which is saved on your phone with your other settings. This version does not send notifications.</p>
 
-<h2>Crash reports</h2>
-<p>Kyslap sends crash reports to Sentry (Functional Software, Inc.) so we can fix bugs. A report contains the error message, the app's code trace at the moment of the crash, the app version, basic device details such as the Android version and phone model, and a random ID created when the app is installed, so we can tell how many phones hit the same bug. That ID is not linked to your name or account, and it resets if you reinstall the app. Reports do not include your name, email address, topics, reading history, or any other data from the app's database, and we do not send your IP address on purpose and have asked Sentry not to store it (Sentry's servers still see it when the report arrives). Session replay and performance tracing are off. Sentry handles the reports under its own <a href="https://sentry.io/privacy/">privacy policy</a>. Crash reports are on by default; turn them off in Settings under "Send crash reports". Errors stop being sent at once, and the native crash handler stops after you restart the app. The app does not collect analytics.</p>
+<h2>How long data is kept, and how to delete it</h2>
+<ul>
+<li><strong>On your phone:</strong> your database stays until you delete it. Clearing the app’s storage (Android Settings, Apps, Kyslap, Storage, Clear data) or uninstalling the app removes all of it. A few items expire by themselves, as listed above (today’s bites after 3 days, saved Wikipedia answers after 6 or 24 hours).</li>
+<li><strong>Crash reports at Sentry:</strong> Sentry deletes them automatically after its retention period. Because the install ID is random and cannot be read inside the app, we cannot look up your reports by name. If you want one removed, email us the date it happened, your phone model, and the app version, and we will do what we can.</li>
+<li><strong>At Wikimedia:</strong> see Wikimedia’s privacy policy, linked above.</li>
+<li>There are no accounts, so there is no account to close.</li>
+</ul>
+
+<h2>Your rights</h2>
+<p>You have the right to be informed about how your data is used (this policy), to access it, to correct it, to object to its use, to withdraw consent, to have it erased or blocked, to receive it in a portable form, to claim damages if it is misused, and to complain to the Philippines’ National Privacy Commission (<a href="https://privacy.gov.ph">privacy.gov.ph</a>). Almost all of your data is on your phone, where you control it: you can see your choices in the app, change them in Settings, and delete everything as described above. For anything we might hold (crash reports), email <a href="mailto:kyslap.app@gmail.com">kyslap.app@gmail.com</a> and we will answer; we may ask for the details above to find a report.</p>
+
+<h2>International transfers</h2>
+<p>We are in the Philippines, but Wikimedia and Sentry run their services elsewhere. Crash reports go to a Sentry address in the United States. Requests to Wikipedia go to Wikimedia’s servers, and they may be outside the Philippines. By using the app you send those requests from your phone to them.</p>
+
+<h2>Security</h2>
+<p>Your database is kept in the app’s private storage, which other apps cannot read on an unmodified phone. The app contacts Wikimedia and Sentry only over encrypted (HTTPS) connections. We hold almost no personal data, so there is little to lose; if we ever learn of a breach that affects you, we will tell you as the law requires.</p>
 
 <h2>What we do not collect</h2>
 <p>No name, email address, phone number, contacts, location, advertising ID, or payment information. We run no servers that receive data from the app.</p>
 
 <h2>Children</h2>
-<p>Kyslap is for people 13 and older and is not designed for children under 13.</p>
+<p>Kyslap is for people 13 and older and is not designed for children under 13. The app has no accounts and does not ask your age, so we cannot check it. If you believe a child under 13 has used the app and you want crash data removed, email us. If you are under 18, please use the app with a parent or guardian’s permission.</p>
 
 <h2>Changes</h2>
-<p>If a later version adds anything that collects or shares data (for example ads), this policy will be updated before that version is released, and the change will be described here.</p>
+<p>If a later version adds anything that collects or shares data (for example ads, a purchase, or notifications), this policy will be updated before that version is released, and the change and its date will be described here.</p>
 
 <h2>Contact</h2>
 <p>Questions about this policy or your data: <a href="mailto:kyslap.app@gmail.com">kyslap.app@gmail.com</a>.</p>

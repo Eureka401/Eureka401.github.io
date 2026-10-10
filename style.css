@@ -1,7 +1,13 @@
+/* D57 provenance: see docs/research/legal-pages.md (SITE-01). */
 :root { color-scheme: light dark; --bg: #fff; --text: #1d1d1f; --muted: #555; --accent: #0b5cad; }
 @media (prefers-color-scheme: dark) { :root { --bg: #121212; --text: #ececec; --muted: #b0b0b0; --accent: #7db8f0; } }
-body { background: var(--bg); color: var(--text); font: 1.0625rem/1.55 system-ui, sans-serif; margin: 0 auto; max-width: 42rem; padding: 1.5rem 1rem 3rem; }
+/* cited: WCAG 1.4.3 (4.5:1 text contrast), computed for every pair above, recorded in docs/sessions/2026-10-10-site-01.md. The WCAG text itself could not be opened from the container (docs/research/legal-pages.md marks 1.4.3 UNVERIFIED), so it is cited from the published criterion. */
+/* aesthetic: page gutter 1rem (the 16 px side gutter in DESIGN.md), top and bottom padding, the 0.9375rem size of the draft note, and the 1.25 heading line height. */
+/* cited: WCAG 1.4.8 (line width at most 80 characters, line spacing at least 1.5): 42rem at 1.0625rem is under 80 characters (about 79 at an average glyph of 0.5em). Line spacing 1.55 meets the 1.5 floor. */
+/* aesthetic: 1.0625rem (17px) body size; rem so it follows the reader's own text size (WCAG 1.4.4). */
+body { background: var(--bg); color: var(--text); font: 1.0625rem/1.55 system-ui, sans-serif; margin: 0 auto; max-width: 42rem; padding: 1.5rem 1rem 3rem; overflow-wrap: anywhere; }
 a { color: var(--accent); }
 h1, h2 { line-height: 1.25; }
 .muted { color: var(--muted); font-size: 0.9375rem; }
-nav a { margin-right: 1rem; }
+/* cited: WCAG 1.4.10 (reflow to 320 CSS px without horizontal scroll): links wrap instead of overflowing at 200% text, and a long URL or address breaks. */
+nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
