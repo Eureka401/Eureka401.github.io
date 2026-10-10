@@ -1,13 +1,59 @@
-/* D57 provenance: see docs/research/legal-pages.md (SITE-01). */
-:root { color-scheme: light dark; --bg: #fff; --text: #1d1d1f; --muted: #555; --accent: #0b5cad; }
-@media (prefers-color-scheme: dark) { :root { --bg: #121212; --text: #ececec; --muted: #b0b0b0; --accent: #7db8f0; } }
-/* cited: WCAG 1.4.3 (4.5:1 text contrast), computed for every pair above, recorded in docs/sessions/2026-10-10-site-01.md. The WCAG text itself could not be opened from the container (docs/research/legal-pages.md marks 1.4.3 UNVERIFIED), so it is cited from the published criterion. */
-/* aesthetic: page gutter 1rem (the 16 px side gutter in DESIGN.md), top and bottom padding, the 0.9375rem size of the draft note, and the 1.25 heading line height. */
-/* cited: WCAG 1.4.8 (line width at most 80 characters, line spacing at least 1.5): 42rem at 1.0625rem is under 80 characters (about 79 at an average glyph of 0.5em). Line spacing 1.55 meets the 1.5 floor. */
-/* aesthetic: 1.0625rem (17px) body size; rem so it follows the reader's own text size (WCAG 1.4.4). */
-body { background: var(--bg); color: var(--text); font: 1.0625rem/1.55 system-ui, sans-serif; margin: 0 auto; max-width: 42rem; padding: 1.5rem 1rem 3rem; overflow-wrap: anywhere; }
-a { color: var(--accent); }
-h1, h2 { line-height: 1.25; }
+/* Kyslap site (SITE-01). Colours, radii and flat hairline style follow docs/design/DESIGN.md §2 and §4, so the site looks like the app.
+   D57 provenance: docs/research/legal-pages.md. No external fonts, scripts or images: nothing here contacts another server (privacy policy). */
+
+/* cited: DESIGN.md §2 tokens `background`, `surface`, `text`, `textSecondary`, `accentText`, `border`, `hookTint`; every text pair is recomputed in docs/sessions/2026-10-10-site-01.md (WCAG 1.4.3, 4.5:1). */
+:root {
+  color-scheme: light dark;
+  --bg: #faf7f2; --surface: #f1ece4; --tint: #e3efec; --text: #1e1b18; --muted: #5a534b; --accent: #0b5b57; --border: #e2dbd0; --rule: #8a8176; /* --rule: DESIGN.md §2 `outline` (cited) */
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151412; --surface: #211f1c; --tint: #15302d; --text: #f1ece4; --muted: #bdb4a8; --accent: #7ad3ca; --border: #34302b; --rule: #8c8378; }
+}
+
+/* aesthetic: system font stacks, because the app's own faces (Literata, Atkinson) are 250 KB each and a legal page should load at once on a slow connection; the serif stack keeps the "good book" tone of DESIGN.md §1. */
+:root { --serif: Literata, "Iowan Old Style", Georgia, "Times New Roman", serif; --sans: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+
+/* cited: WCAG 1.4.4 (text resizes to 200%): every size is in rem, so it follows the reader's own text size. */
+/* cited: WCAG 1.4.8 (at most 80 characters a line; line spacing at least 1.5): 40rem at 1.0625rem is about 75 characters; the 1.6 line spacing meets U1's 1.5 floor (PRINCIPLES U1, WCAG 1.4.12). */
+/* aesthetic: 1.0625rem (17px) matches the app's 17sp body text (U1), which is itself an aesthetic choice with no source; the 1rem side gutter is the app's 16dp gutter (DESIGN.md §4). */
+/* aesthetic: the headings and the home-page lede (h1 2rem, h2 1.4rem, h3 1.1rem, lede 1.25rem) echo the app's 28/20 display and title sizes; the 15px (0.9375rem) small text stays above U1's 14sp floor; the 2.5rem section spacing and the panel padding are visual rhythm, not reading-critical. */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 1.0625rem/1.6 var(--sans); overflow-wrap: anywhere; }
+.wrap { max-width: 40rem; margin: 0 auto; padding: 0 1rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.25; margin: 0; }
+h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+h2 { font-size: 1.4rem; margin: 2.5rem 0 0.75rem; scroll-margin-top: 1rem; }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+p, ul, ol, dl { margin: 0 0 1rem; }
+li { margin-bottom: 0.4rem; }
 .muted { color: var(--muted); font-size: 0.9375rem; }
-/* cited: WCAG 1.4.10 (reflow to 320 CSS px without horizontal scroll): links wrap instead of overflowing at 200% text, and a long URL or address breaks. */
-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+
+/* Header and footer. cited: WCAG 1.4.10 (reflow at 320 CSS px with no horizontal scroll): the nav wraps. cited: WCAG 2.5.8 (target size, 24 CSS px): links in the nav have a 2.75rem tall tap area. */
+.skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: var(--bg); padding: 0.5rem 1rem; z-index: 10; }
+.skip:focus { left: 0; }
+header.site { border-bottom: 1px solid var(--border); }
+header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 1.5rem; }
+.brand { font: 600 1.375rem/1 var(--serif); color: var(--text); text-decoration: none; padding: 0.9rem 0; }
+nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+nav a { display: inline-block; padding: 0.7rem 0; min-height: 1.35rem; color: var(--text); text-decoration: none; border-bottom: 2px solid transparent; }
+nav a:hover { border-bottom-color: var(--rule); }
+nav a[aria-current="page"] { border-bottom-color: var(--accent); color: var(--accent); font-weight: 700; }
+main { padding: 2rem 0 1rem; }
+footer.site { border-top: 1px solid var(--border); margin-top: 2.5rem; padding: 1.5rem 0 3rem; color: var(--muted); font-size: 0.9375rem; }
+footer.site p { margin-bottom: 0.5rem; }
+
+/* Panels: flat with a hairline border and the `lg` radius (DESIGN.md §4). */
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 1.25rem 1.25rem 0.75rem; margin: 1.5rem 0; }
+.panel.tint { background: var(--tint); }
+.panel h2, .panel h3 { margin-top: 0; }
+.lede { font: 1.25rem/1.5 var(--serif); }
+.toc { padding-left: 1.25rem; }
+.toc li { margin-bottom: 0.25rem; }
+dt { font-weight: 700; margin-top: 0.75rem; }
+dd { margin: 0.1rem 0 0; }
+.updated { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+
+/* Print: a reader may print or save the policy. */
+@media print { header.site nav, .skip { display: none; } body { background: #fff; color: #000; font-size: 11pt; } a { color: #000; } .panel { border: 1px solid #999; background: none; } }
