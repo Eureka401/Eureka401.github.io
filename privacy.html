@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="How the Kyslap app handles your data: what stays on your phone, what is sent to Wikimedia and Sentry, how long it is kept, and your rights.">
+<meta name="description" content="How the Kyslap app handles your data: what stays on your phone, what is sent to Wikimedia, Sentry, Supabase and Google, what other readers can see, how long it is kept, and your rights.">
 <title>Privacy policy · Kyslap</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -16,13 +16,14 @@
 </div></header>
 <main id="main"><div class="wrap">
 <h1>Privacy policy</h1>
-<p class="muted updated"><span>Last updated 2026-10-10.</span><span>Draft: not yet reviewed by a lawyer.</span><span>Applies to the Kyslap closed-test version for Android.</span></p>
+<p class="muted updated"><span>Last updated 2026-10-16.</span><span>Draft: not yet reviewed by a lawyer.</span><span>Applies to the Kyslap closed-test version for Android.</span></p>
 
 <div class="panel tint">
 <h2>In short</h2>
 <ul>
-<li>Kyslap has <strong>no accounts, no ads, no purchases, and no analytics</strong> in this version.</li>
-<li>Your interests, goal, and reading history <strong>stay on your phone</strong>. We never receive them.</li>
+<li>Kyslap works <strong>without an account</strong>. If you choose to sign in with Google, you can write questions and share answers, and some of what you share is visible to other readers (see “What other readers can see”).</li>
+<li>This version has <strong>no ads, no purchases, and no analytics</strong>.</li>
+<li>Your interests, goal, and reading history <strong>stay on your phone</strong>, with one exception: to find questions other readers wrote about articles you have read, the app sends the ids of some of those articles to our database, with no name or account unless you are signed in (see “Questions from other readers”).</li>
 <li>The app asks <strong>Wikipedia and Wikimedia Commons</strong> for the articles and images it shows. That tells them your IP address and what was requested.</li>
 <li>The app sends <strong>crash reports to Sentry</strong>. You can turn them off in Settings.</li>
 <li>We do not sell your data and do not track you across other apps or websites.</li>
@@ -34,6 +35,7 @@
 <li><a href="#who">Who is responsible</a></li>
 <li><a href="#phone">What stays on your phone</a></li>
 <li><a href="#network">What is sent over the network</a></li>
+<li><a href="#others">What other readers can see</a></li>
 <li><a href="#why">Why we use data, and on what basis</a></li>
 <li><a href="#recipients">Who receives data</a></li>
 <li><a href="#transfers">Transfers to other countries</a></li>
@@ -53,19 +55,31 @@
 <h2 id="phone">2. What stays on your phone</h2>
 <p>Kyslap keeps a database in the app’s private storage on your phone. We never receive a copy of it. It holds:</p>
 <ul>
-<li><strong>Your choices:</strong> the topics you picked (and, as a list, every topic you have ever picked, even if you later switched it off), your daily goal, whether streaks are on, a reminder time (saved only; this version sends no notifications), and the crash-report switch.</li>
+<li><strong>Your choices:</strong> the topics you picked (and, as a list, every topic you have ever picked, even if you later switched it off), including any topic you typed in yourself, saved as the title of the Wikipedia article you confirmed; your daily goal, whether streaks are on, a reminder time (saved only; this version sends no notifications), and the crash-report switch.</li>
 <li><strong>What you have seen and done:</strong> which articles were shown to you (and which version), the articles you saved (their titles), and a skip list of articles the app could not turn into a bite. For each bite: how long you stayed, whether you swiped sideways, saved it, opened the full article, or marked it “not interested”. Also a log of what the app chose for you and why (the topic group and the chance it was picked), and your daily progress (how many bites you finished). It also keeps the titles and topics of the bites you finished today and your one-tap answer on whether the goal felt too short, right, or too long.</li>
 <li><strong>Bites ready to read:</strong> the next few bites (their text and image credits), fetched ahead so they work offline, and today’s bites, kept for up to 3 days so they survive closing the app.</li>
-<li><strong>Wikipedia answers kept to avoid asking again:</strong> search results for 6 hours. Article text and image details are kept only while the app is open. The app’s image loader may also keep the photos you have seen on your phone.</li>
+<li><strong>Your dives:</strong> when you tap “Go deeper” and open a related article, the app keeps that dive on your phone for up to 3 days, and you can reopen it only on the day you made it. It holds the articles you opened (their titles and text, with image credits), the path between them, how long you stayed on each, whether you saved one or opened it in full, and which of them counted toward your daily goal. Nothing about a dive is sent to us.</li>
+<li><strong>Wikipedia answers kept to avoid asking again:</strong> search results (including those for topics you typed) for 6 hours. Article text and image details are kept only while the app is open. The app’s image loader may also keep the photos you have seen on your phone.</li>
+<li><strong>Your recall questions:</strong> for each question you answered in a recall check, which question and article it was about, how many bites earlier you read the article, and whether you answered it or used “I don’t remember”. It holds no score and not the words you typed.</li>
+<li><strong>Your reviews:</strong> for each sentence you answered a recall question about, the app keeps its article title, the question last asked about it (written by another reader, with their display name), when the sentence is next due for a review, how you last answered, and a log of each review (when, how well it was remembered, and whether it was a typed or a multiple-choice question). It also keeps which articles you read have a question written about them, so the Progress tab can show how many do. A review looks for another question about the same article by sending the article’s id to our database, as in section 3. The words you typed are not kept, and none of this is sent to us.</li>
+<li><strong>People you blocked and questions you hid:</strong> if you block someone or hide a question from the “⋯” menu or an answer, the app keeps their ID (and, for a person, the display name they had when you blocked them) on your phone, so it can leave them out and show you the list. Blocking and hiding need no account. The IDs are sent to our database with your requests for questions and for other readers’ answers (see section 3), which is how they are left out.</li>
+<li><strong>Your sign-in, if you sign in:</strong> a session token, kept in the phone’s encrypted secure storage, so you stay signed in. Signing out or deleting your account removes it from the phone.</li>
 <li><strong>A request counter:</strong> the times of recent requests to Wikipedia and an hourly limit the app has learned for you, so it stays within Wikimedia’s rules. It holds no article titles or search terms.</li>
 </ul>
-<p>The app uses these only to choose what to show you next. Nothing in this list is shared with anyone.</p>
+<p>The app uses these only to choose what to show you next and which question to ask you. Nothing in this list is shared with anyone, except that, when the app looks for a question about an article you have read, it sends that article’s id (see “Questions from other readers” in section 3), and an answer you choose to share is sent as described there.</p>
 
 <h2 id="network">3. What is sent over the network</h2>
 <h3>To Wikipedia and Wikimedia Commons</h3>
-<p>These are run by the Wikimedia Foundation. To build a bite, the app requests article excerpts and image details, and your phone then loads the images. Like any web request, this reveals your device’s IP address and the request itself to Wikimedia: for example the topic it is searching for, an article title, an image file name, or the request for Wikipedia’s featured article of the day. Each request carries a User-Agent that names the app, its version, and this website, as Wikimedia’s API policy asks; it contains no personal identifier. Wikimedia handles that data under its own <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a>.</p>
+<p>These are run by the Wikimedia Foundation. To build a bite, the app requests article excerpts and image details, and your phone then loads the images. Like any web request, this reveals your device’s IP address and the request itself to Wikimedia: for example the topic it is searching for, an article title, the links in the part of an article you were reading when you tapped “Go deeper” and a short description of each article they point to, the words you type when you add your own topic (sent as a search so you can confirm the article), an image file name, or the request for Wikipedia’s featured article of the day. Each request carries a User-Agent that names the app, its version, and this website, as Wikimedia’s API policy asks; it contains no personal identifier. Wikimedia handles that data under its own <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a>.</p>
+<h3>Questions from other readers: Supabase</h3>
+<p>Readers can write short questions about the articles they read. From your fifth bite on, Kyslap looks for one about an article you have already read; if none is found it looks again at each following bite until one is, and then again five bites later. To do that the app asks our database, which is hosted by Supabase (see below), and sends the ids of up to 50 articles you have read, the ids of the questions this phone has recently asked you, and the ids of any authors you have blocked on this phone, so they are left out. This happens <strong>whether or not you are signed in</strong>. If you are not signed in, no name, email address or Kyslap account goes with it (if you have reported something, the background account that report created goes with it); like any web request it still reveals your IP address to Supabase, whose server logs keep it for a short time (see below). If you are signed in, the request carries your sign-in, so questions you have already answered are skipped and questions by people you follow come first. The question comes back with its author’s display name and avatar; you answer it on your phone first, and nothing you type leaves the phone unless you sign in and agree to share your answers: once you have agreed, your later answers are shared as you give them, and you can delete any of them (see “What other readers can see”). If you follow an author, we store that you follow them; your list of people you follow is private, and the author sees only how many people follow them.</p>
+<h3>If you sign in or report something: Google and Supabase</h3>
+<p>Signing in is optional; the app works without it. If you sign in, Google’s sign-in screen (part of Google Play services on your phone) asks you to choose a Google account and gives Kyslap’s database an ID token for it. Our database is hosted by Supabase (Supabase Pte. Ltd., in Singapore, on Amazon Web Services). If you sign in, Supabase stores your Google account’s email address and ID, the name and profile-picture link Google sends with them (we never show these to other readers), your display name and avatar, and, as you use the social features, your questions, votes, follows, reports and answers (the option you chose or the words you typed) with their times, plus a short note that you answered a question (without the answer) so it is not asked again. We do not ask your age or birth date. Kyslap is for people 13 and older. If you are under 18 and unsure whether to sign in, ask a parent or guardian.</p>
+<p>When the app asks our database for questions to show you, or for other readers’ answers to a question, it sends the IDs of the people you blocked and of the questions you hid, so those are left out. A report sends what you reported (a question, an answer or a person) and the reason you picked.</p>
+<p>If you report something while you are not signed in, the app first creates an anonymous account in the background so the report can be sent. That account has no profile, name or email address; it holds only the reports it sent.</p>
+<p>Supabase keeps short-lived server logs of requests, which include IP addresses and, for sign-in events, the email address and name of the Google account, for up to 24 hours. Its sign-in service also keeps a record of each signed-in session, which includes an IP address, while you stay signed in; the record goes when you sign out or delete your account. The page for deleting your account on this website loads Google’s sign-in script from Google, so Google sees that visit; the page sets no cookies of its own. If the Google account you sign in with has no Kyslap account, the sign-in briefly creates an empty one, which the page deletes at once.</p>
 <h3>When you open an article or a license</h3>
-<p>“Read full article” opens the Wikipedia page in a browser tab shown inside Kyslap. That tab is run by your phone’s own browser, so your browser’s cookies, sign-ins, and settings apply there, and the app cannot see what you do in it. Links to licenses and to this website open your phone’s browser directly. Those sites handle your data under their own policies.</p>
+<p>“Read the full article”, in the “Go deeper” menu, opens the Wikipedia page in a browser tab shown inside Kyslap. That tab is run by your phone’s own browser, so your browser’s cookies, sign-ins, and settings apply there, and the app cannot see what you do in it. Links to licenses and to this website open your phone’s browser directly. Those sites handle your data under their own policies.</p>
 <h3>Crash reports, to Sentry</h3>
 <p>Kyslap sends crash reports to Sentry (Functional Software, Inc.) so we can fix bugs. A report contains the error message, the app’s code trace at the moment of the crash, the app version, whether it is a test or a release build, basic device details such as the Android version and phone model, and a random ID that the crash tool creates for the installation, so we can tell how many phones hit the same bug. That ID is not linked to your name or account, and it may change if you reinstall the app.</p>
 <p>We do not send the app’s database, and reports do not include your name or email address. An error message can still contain the Wikipedia address the app was fetching at the time, which names a topic or article. We turned off screenshots, session replay, performance tracing, and usage tracking, and the app removes network, navigation, and console notes from reports. We do not send your IP address on purpose and have asked Sentry not to store it (Sentry’s servers still see it when the report arrives). Sentry handles the reports under its own <a href="https://sentry.io/privacy/">privacy policy</a>.</p>
@@ -73,37 +87,48 @@
 <h3>No tracking</h3>
 <p>Kyslap does not track you across other apps or websites, uses no advertising ID, and has no analytics tools, so there is nothing for a Do Not Track signal to switch off.</p>
 
-<h2 id="why">4. Why we use data, and on what basis</h2>
+<h2 id="others">4. What other readers can see</h2>
+<p>When you answer a question, the person who wrote it and the other readers who answered it can see your answer with your display name, your avatar and your badge. Nobody can reply to an answer or message you. Your display name starts as “Reader 1234”, and we never show your Google name or email address. Please don’t use your real name. If you use a nickname or details people already know you by, such as one from your school or another app, they may recognise you from it. Nothing is shared until you sign in with Google, agree to the terms, and answer: your answer is first checked on your phone, and “I don’t remember” is never sent. The app shows you this notice before your first shared answer: “Your answer is shared with your display name and avatar: the question’s author and other people who answered can see it. You can delete it at any time, and it is deleted with your account.” You can delete any answer (the “Delete my answer” button under the question), or your whole account, whenever you like. We keep a note that you answered the question, without the answer, so it is not asked again. We cannot remove copies someone makes by screenshot. Other readers can report an answer, and we may hide or remove it.</p>
+<p>The same goes for questions you write: they show your display name and avatar, and they are published under the Creative Commons Attribution-ShareAlike 4.0 license, as the terms explain.</p>
+
+<h2 id="why">5. Why we use data, and on what basis</h2>
 <ul>
 <li><strong>To run the app and choose bites for you.</strong> You asked the app to do this when you installed it and picked topics. The data stays on your phone. Nothing is needed from you beyond using the app.</li>
 <li><strong>To get articles and images from Wikimedia.</strong> The app cannot show you content without asking for it.</li>
+<li><strong>To give you the features you asked for.</strong> If you sign in, we use your account data for your account, your questions and answers, and for showing them to others as described in “What other readers can see”. Signing in is optional; the app works without it.</li>
 <li><strong>To fix bugs with crash reports.</strong> This is in the interest of everyone who uses the app, and the data is small and limited. Crash reports are optional: switching them off in Settings is how you object to this use, and it takes effect as described above.</li>
 </ul>
 <p>We do not make decisions about you by computer that have legal or similarly important effects. The app’s choice of the next bite is a content suggestion that happens on your phone.</p>
 
-<h2 id="recipients">5. Who receives data</h2>
+<h2 id="recipients">6. Who receives data</h2>
 <dl>
 <dt>Wikimedia Foundation</dt>
 <dd>Your IP address and the requests for articles and images, whenever the app loads content.</dd>
 <dt>Sentry</dt>
 <dd>Crash reports, only if you leave them on, as described above.</dd>
+<dt>GitHub</dt>
+<dd>If you sign in, an encrypted weekly backup of our database, which includes the account data described above, is stored at GitHub (a company in the United States) for 28 days. Only we can open it.</dd>
+<dt>Supabase and Google</dt>
+<dd>Supabase hosts our database (in Singapore, on Amazon Web Services, with support access from the United States), and Google provides the sign-in. They process the data for us, if you sign in or report, and Supabase also receives the article ids described under “Questions from other readers” whenever the app looks for a question. Other readers see only what “What other readers can see” lists.</dd>
 <dt>Your phone’s browser</dt>
 <dd>Whatever you open from a link (an article, a license, this website).</dd>
 </dl>
-<p>Wikimedia receives these requests as an independent service, and Sentry processes crash reports for us under its own terms. We do not sell your personal information, and we do not share it for advertising. We have no ads, advertising IDs, or analytics tools in this version.</p>
+<p>Wikimedia receives these requests as an independent service, and Sentry, Supabase and Google process data for us under their own terms. We do not sell your personal information, and we do not share it for advertising. We have no ads, advertising IDs, or analytics tools in this version.</p>
 
-<h2 id="transfers">6. Transfers to other countries</h2>
-<p>We are in the Philippines, but Wikimedia and Sentry run their services elsewhere. Crash reports go to a Sentry address in the United States. Requests to Wikipedia go to Wikimedia’s servers, which may be outside the Philippines. By using the app you send those requests from your phone to them. We remain responsible for the crash reports we send, and we ask you to turn them off if you do not want them to leave your country.</p>
+<h2 id="transfers">7. Transfers to other countries</h2>
+<p>We are in the Philippines, but Wikimedia, Sentry, Supabase and Google run their services elsewhere. Crash reports go to a Sentry address in the United States. Requests to Wikipedia go to Wikimedia’s servers, which may be outside the Philippines. By using the app you send those requests from your phone to them. We remain responsible for the crash reports we send, and we ask you to turn them off if you do not want them to leave your country.</p>
+<p>If you sign in, our database is in Singapore, support access can come from the United States, and its encrypted weekly backup is stored at GitHub in the United States. We remain responsible for your data when it is processed for us abroad, and we use Supabase’s data processing terms for it.</p>
 
-<h2 id="keep">7. How long data is kept, and deleting it</h2>
+<h2 id="keep">8. How long data is kept, and deleting it</h2>
 <ul>
-<li><strong>On your phone:</strong> your database stays until you delete it. Clearing the app’s storage (Android Settings, Apps, Kyslap, Storage, Clear data) or uninstalling the app removes all of it. A few items expire by themselves, as listed above (today’s bites after 3 days, saved search results after 6 hours).</li>
+<li><strong>On your phone:</strong> your database stays until you delete it. Clearing the app’s storage (Android Settings, Apps, Kyslap, Storage, Clear data) or uninstalling the app removes all of it. A few items expire by themselves, as listed above (today’s bites and your dives after 3 days, saved search results after 6 hours).</li>
 <li><strong>Crash reports at Sentry:</strong> Sentry deletes them automatically after its retention period. Because the install ID is random and cannot be read inside the app, we cannot look up your reports by name. If you want one removed, email us the date it happened, your phone model, and the app version, and we will do what we can.</li>
 <li><strong>At Wikimedia:</strong> see Wikimedia’s privacy policy, linked above.</li>
-<li>There are no accounts, so there is no account to close.</li>
+<li><strong>Your account and what you shared:</strong> answers and questions stay until you delete them or your account. You can delete your account in the app (Settings, Account) or on our website, at <a href="delete-account">the delete-account page</a>. Deleting it also deletes your questions, your answers, your votes and follows, and your reports. Deleted data leaves our encrypted backups (stored at GitHub) within 28 days. Short-lived server logs, which include IP addresses and, for sign-in events, the Google account’s email address and name, are kept for up to 24 hours. Reports and moderation records are kept without your name.</li>
+<li>If you never sign in, there is no account to close.</li>
 </ul>
 
-<h2 id="rights">8. Your rights</h2>
+<h2 id="rights">9. Your rights</h2>
 <p>Depending on where you live, you may have the right to:</p>
 <ul>
 <li>be informed about how your data is used (this policy);</li>
@@ -112,28 +137,32 @@
 <li>have it erased or blocked;</li>
 <li>receive a copy of it;</li>
 <li>claim damages if it is misused; and</li>
-<li>complain to a data protection authority: in the Philippines, the National Privacy Commission (<a href="https://privacy.gov.ph">privacy.gov.ph</a>); elsewhere, the authority where you live.</li>
+<li>complain to a data protection authority: in the Philippines, the National Privacy Commission (<a href="https://privacy.gov.ph">privacy.gov.ph</a>); elsewhere, the authority where you live (you can complain to the National Privacy Commission of the Philippines or to your local data protection authority).</li>
 </ul>
-<p>Almost all of your data is on your phone, where you control it: you can see your choices in the app, change them in Settings, and delete everything as described above. For anything we might hold (crash reports), email <a href="mailto:kyslap.app@gmail.com">kyslap.app@gmail.com</a>. We will answer as soon as we can. We may ask for the details in section 7 to find a report, and we will not ask you for more personal information than that.</p>
+<p>Most of your data is on your phone, where you control it: you can see your choices in the app, change them in Settings, and delete everything as described above. If you have an account, you can change your display name and delete your answers or your whole account in the app. For anything else we might hold (your account data, crash reports), email <a href="mailto:kyslap.app@gmail.com">kyslap.app@gmail.com</a>. We will answer as soon as we can. We may ask for the details in section 8 to find a report, and we will not ask you for more personal information than that.</p>
 
-<h2 id="children">9. Children and teens</h2>
-<p>Kyslap is for people <strong>13 and older</strong>. It is not directed to children under 13, and we do not knowingly collect personal information from them. The app has no accounts and does not ask your age, so we cannot check it. If you are a parent or guardian and believe a child under 13 has used the app, email us and we will delete any crash data we can find.</p>
-<p>If you are under 18, please use the app with a parent or guardian’s permission. We have tried to write this policy so that a teenager can read it.</p>
+<h2 id="children">10. Children and teens</h2>
+<p>Kyslap is for people <strong>13 and older</strong>. It is not directed to children under 13, and we do not knowingly collect personal information from them. The app does not ask your age, so we cannot check it. We do not knowingly collect data from children under 13. Parents who find that a child under 13 has signed in can email us to have the account deleted. Teens can use the social features; what they share is shown as described in “What other readers can see”.</p>
+<p>If you are under 18 and unsure whether to sign in, ask a parent or guardian. We have tried to write this policy so that a teenager can read it.</p>
 
-<h2 id="security">10. Security and breaches</h2>
-<p>Your database is kept in the app’s private storage, which other apps cannot read on an unmodified phone. The app contacts Wikimedia and Sentry only over encrypted (HTTPS) connections. We hold almost no personal data, so there is little to lose. If we ever learn of a breach that affects you, we will post a notice on this website and tell the authorities as the law requires.</p>
+<h2 id="security">11. Security and breaches</h2>
+<p>Your database is kept in the app’s private storage, which other apps cannot read on an unmodified phone. The app contacts Wikimedia and Sentry only over encrypted (HTTPS) connections. Without an account we hold almost no personal data, so there is little to lose. Account data is sent to Supabase only over encrypted (HTTPS) connections. If a breach puts your data at risk, we will tell the National Privacy Commission and the people affected within 72 hours, in plain language.</p>
 
-<h2 id="later">11. Ads, purchases, and notifications</h2>
+<h2 id="later">12. Ads, purchases, and notifications</h2>
 <p>This version has none of these. The app saves a reminder time you can choose, but it does not send notifications. A later version may add ads (through Google AdMob) and a one-time supporter purchase (through Google Play). Before any version collects or shares data for these, this policy will be updated and the change described here, including what the ad service receives and how to control it.</p>
 
-<h2 id="changes">12. Changes to this policy</h2>
+<h2 id="changes">13. Changes to this policy</h2>
 <p>If we change this policy in a way that matters, we will update the date and describe the change below before it takes effect.</p>
 <ul>
+<li><strong>2026-10-16:</strong> added spaced review on your phone (what it keeps for each sentence you answered a question about) and the Progress tab.</li>
+<li><strong>2026-10-16:</strong> added recall questions from other readers: the app sends the ids of articles you have read to our database to find them (even when you are not signed in), the log of recall questions kept on your phone, the notice before your first shared answer, deleting an answer, and following an author.</li>
+<li><strong>2026-10-16:</strong> added blocking people and hiding questions on your phone, and that their IDs are sent with requests for questions and answers so they are left out.</li>
+<li><strong>2026-10-14:</strong> added optional sign-in with Google, the display name, what other readers can see, deleting your account, Supabase and Google as recipients, and the 28-day backup tail. The social features arrive in the closed test in steps; this page describes all of them.</li>
 <li><strong>2026-10-10:</strong> rewritten to match everything the app stores and sends, with sections on rights, retention, transfers, children, and security.</li>
 <li><strong>2026-09-30:</strong> first published, with the crash-report paragraph.</li>
 </ul>
 
-<h2 id="contact">13. Contact</h2>
+<h2 id="contact">14. Contact</h2>
 <p>Questions about this policy or your data: <a href="mailto:kyslap.app@gmail.com">kyslap.app@gmail.com</a>.</p>
 </div></main>
 <footer class="site"><div class="wrap">

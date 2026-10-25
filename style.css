@@ -1,5 +1,5 @@
 /* Kyslap site (SITE-01). Colours, radii and flat hairline style follow docs/design/DESIGN.md §2 and §4, so the site looks like the app.
-   D57 provenance: docs/research/legal-pages.md. No external fonts, scripts or images: nothing here contacts another server (privacy policy). */
+   D57 provenance: docs/research/legal-pages.md. No external fonts or images. The pages contact no other server, except delete-account.html, which loads Google's sign-in script (privacy policy). */
 
 /* cited: DESIGN.md §2 tokens `background`, `surface`, `text`, `textSecondary`, `accentText`, `border`, `hookTint`; every text pair is recomputed in docs/sessions/2026-10-10-site-01.md (WCAG 1.4.3, 4.5:1). */
 :root {
@@ -54,6 +54,12 @@ footer.site p { margin-bottom: 0.5rem; }
 dt { font-weight: 700; margin-top: 0.75rem; }
 dd { margin: 0.1rem 0 0; }
 .updated { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+
+/* Button (delete-account.html). cited: WCAG 2.5.8 target size and 1.4.3 contrast: --accent text on --bg is the link pair, and the label uses --bg on --accent, the same pair reversed. */
+.btn { font: inherit; min-height: 2.75rem; padding: 0.5rem 1.25rem; border: 0; border-radius: 12px; background: var(--accent); color: var(--bg); cursor: pointer; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+input[type="checkbox"] { width: 1.25rem; height: 1.25rem; vertical-align: -0.2rem; margin-right: 0.5rem; accent-color: var(--accent); }
 
 /* Print: a reader may print or save the policy. */
 @media print { header.site nav, .skip { display: none; } body { background: #fff; color: #000; font-size: 11pt; } a { color: #000; } .panel { border: 1px solid #999; background: none; } }
