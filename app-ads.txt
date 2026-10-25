@@ -1,3 +1,3 @@
-# Placeholder: M2 adds the AdMob publisher line once the AdMob account exists,
-# in the form: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-# Until then this file has no active lines, which is valid.
+# Authorized ad sellers for Kyslap (IAB app-ads.txt). AdMob publisher id
+# added 2026-10-25 (INT-0ah, from the owner's AdMob account).
+google.com, pub-1591437302946281, DIRECT, f08c47fec0942fa0
