@@ -25,7 +25,7 @@
 <li>This version has <strong>no purchases and no analytics</strong>. It can show <strong>ads from Google AdMob</strong>, only after you finish your daily goal: one ad on the Done screen, and a video you choose to watch for a bonus round. Ads may be switched off for everyone; when they are on, Google receives device and ad data described in “Ads, through Google AdMob”, and where the law requires it you are asked first.</li>
 <li>Your interests, goal, and reading history <strong>stay on your phone</strong>, with one exception: to find questions other readers wrote about articles you have read, the app sends the ids of some of those articles to our database, with no name or account unless you are signed in (see “Questions from other readers”).</li>
 <li>The app asks <strong>Wikipedia and Wikimedia Commons</strong> for the articles and images it shows. That tells them your IP address and what was requested.</li>
-<li>The app sends <strong>crash reports to Sentry</strong>. You can turn them off in Settings.</li>
+<li>The app sends <strong>crash reports to Sentry</strong> only if you say yes. It asks once when you first set the app up, and you can change your answer in Settings.</li>
 <li>We do not sell your data. Kyslap itself does not track you across other apps or websites; Google’s ad service may use your advertising ID, as described below.</li>
 </ul>
 </div>
@@ -82,8 +82,8 @@
 <p>“Read the full article”, in the “Go deeper” menu, opens the Wikipedia page in a browser tab shown inside Kyslap. That tab is run by your phone’s own browser, so your browser’s cookies, sign-ins, and settings apply there, and the app cannot see what you do in it. Links to licenses and to this website open your phone’s browser directly. Those sites handle your data under their own policies.</p>
 <h3>Crash reports, to Sentry</h3>
 <p>Kyslap sends crash reports to Sentry (Functional Software, Inc.) so we can fix bugs. A report contains the error message, the app’s code trace at the moment of the crash, the app version, whether it is a test or a release build, basic device details such as the Android version and phone model, and a random ID that the crash tool creates for the installation, so we can tell how many phones hit the same bug. That ID is not linked to your name or account, and it may change if you reinstall the app.</p>
-<p>We do not send the app’s database, and reports do not include your name or email address. An error message can still contain the Wikipedia address the app was fetching at the time, which names a topic or article. We turned off screenshots, session replay, performance tracing, and usage tracking, and the app removes network, navigation, and console notes from reports. We do not send your IP address on purpose and have asked Sentry not to store it (Sentry’s servers still see it when the report arrives). Sentry handles the reports under its own <a href="https://sentry.io/privacy/">privacy policy</a>.</p>
-<p>Crash reports are on by default and are sent only from release builds. Turn them off in Settings under “Send crash reports”. Errors stop being sent at once, and the native crash handler stops after you restart the app.</p>
+<p>We do not send the app’s database, and reports do not include your name or email address. The app removes web addresses and article titles from error messages before sending them. We turned off screenshots, session replay, performance tracing, and usage tracking, and the app removes network, navigation, and console notes from reports. We do not send your IP address on purpose and have asked Sentry not to store it (Sentry’s servers still see it when the report arrives). Sentry handles the reports under its own <a href="https://sentry.io/privacy/">privacy policy</a>.</p>
+<p>Crash reports are off unless you choose “Yes” when the app first asks, or turn on “Send crash reports” in Settings. If you say no, nothing is sent. They are sent only from release builds. You can switch them off again in Settings: errors stop being sent at once, and the native crash handler stops after you restart the app.</p>
 <h3>Whether ads are on: GitHub Pages</h3>
 <p>At most once each time it runs, when you reach the Done screen, the app reads a small settings file from this website (<code>remote-config.json</code>, hosted by GitHub Pages) that says whether ads are switched on. Like any web request it reveals your IP address to GitHub. Nothing about you is sent with it. The app keeps the last answer on your phone; if it has never read the file, ads stay off.</p>
 <h3 id="ads">Ads, through Google AdMob</h3>
@@ -103,7 +103,7 @@
 <li><strong>To get articles and images from Wikimedia.</strong> The app cannot show you content without asking for it.</li>
 <li><strong>To give you the features you asked for.</strong> If you sign in, we use your account data for your account, your questions and answers, and for showing them to others as described in “What other readers can see”. Signing in is optional; the app works without it.</li>
 <li><strong>To show ads after your goal, which pay for the app.</strong> Where the law requires consent (the European Economic Area, the United Kingdom, Switzerland), ads are personalized only if you agree in Google’s message; otherwise, and elsewhere, they rest on our interest in funding a free app, limited to the Done screen. You can change your choice in Settings (“Ad privacy choices”) and object by resetting or deleting your advertising ID.</li>
-<li><strong>To fix bugs with crash reports.</strong> This is in the interest of everyone who uses the app, and the data is small and limited. Crash reports are optional: switching them off in Settings is how you object to this use, and it takes effect as described above.</li>
+<li><strong>To fix bugs with crash reports.</strong> This rests on your consent, and the data is small and limited. Crash reports are optional: you give it by choosing “Yes” when the app asks or by turning them on in Settings, and you withdraw it by switching them off in Settings, which takes effect as described above.</li>
 </ul>
 <p>We do not make decisions about you by computer that have legal or similarly important effects. The app’s choice of the next bite is a content suggestion that happens on your phone.</p>
 
@@ -112,7 +112,7 @@
 <dt>Wikimedia Foundation</dt>
 <dd>Your IP address and the requests for articles and images, whenever the app loads content.</dd>
 <dt>Sentry</dt>
-<dd>Crash reports, only if you leave them on, as described above.</dd>
+<dd>Crash reports, only if you have said yes, as described above.</dd>
 <dt>GitHub</dt>
 <dd>If you sign in, an encrypted weekly backup of our database, which includes the account data described above, is stored at GitHub (a company in the United States) for 28 days. Only we can open it.</dd>
 <dt>Google (AdMob)</dt>
@@ -125,7 +125,7 @@
 <p>Wikimedia receives these requests as an independent service, and Sentry, Supabase and Google process data for us under their own terms. We do not sell your personal information. When ads are on, Google AdMob receives the data described in “Ads, through Google AdMob” to show and measure ads; in some US states that kind of sharing can count as “sharing for advertising”, and Google’s message there lets you opt out. We have no analytics tools.</p>
 
 <h2 id="transfers">7. Transfers to other countries</h2>
-<p>We are in the Philippines, but Wikimedia, Sentry, Supabase and Google run their services elsewhere. Crash reports go to a Sentry address in the United States. Requests to Wikipedia go to Wikimedia’s servers, which may be outside the Philippines. By using the app you send those requests from your phone to them. We remain responsible for the crash reports we send, and we ask you to turn them off if you do not want them to leave your country.</p>
+<p>We are in the Philippines, but Wikimedia, Sentry, Supabase and Google run their services elsewhere. Crash reports go to a Sentry address in the United States. Requests to Wikipedia go to Wikimedia’s servers, which may be outside the Philippines. By using the app you send those requests from your phone to them. We remain responsible for the crash reports we send, and they are sent only if you say yes; you can turn them off in Settings.</p>
 <p>If you sign in, our database is in Singapore, support access can come from the United States, and its encrypted weekly backup is stored at GitHub in the United States. We remain responsible for your data when it is processed for us abroad, and we use Supabase’s data processing terms for it.</p>
 
 <h2 id="keep">8. How long data is kept, and deleting it</h2>
@@ -142,7 +142,7 @@
 <ul>
 <li>be informed about how your data is used (this policy);</li>
 <li>access your data and correct it;</li>
-<li>object to its use, or withdraw any consent you gave;</li>
+<li>object to its use, or withdraw any consent you gave (for crash reports, switch off “Send crash reports” in Settings);</li>
 <li>have it erased or blocked;</li>
 <li>receive a copy of it;</li>
 <li>claim damages if it is misused; and</li>
@@ -164,6 +164,7 @@
 <p>If we change this policy in a way that matters, we will update the date and describe the change below before it takes effect.</p>
 <ul>
 <li><strong>2026-10-25:</strong> added ads through Google AdMob after the daily goal (the Done-screen ad and the optional bonus-round video), Google’s consent message and “Ad privacy choices” in Settings, what Google receives (including the advertising ID), the bonus rounds kept on your phone, and the settings file read from this website that says whether ads are on.</li>
+<li><strong>2026-10-25:</strong> crash reports are now off unless you say yes, and the app removes web addresses and article titles from them.</li>
 <li><strong>2026-10-16:</strong> added spaced review on your phone (what it keeps for each sentence you answered a question about) and the Progress tab.</li>
 <li><strong>2026-10-16:</strong> added recall questions from other readers: the app sends the ids of articles you have read to our database to find them (even when you are not signed in), the log of recall questions kept on your phone, the notice before your first shared answer, deleting an answer, and following an author.</li>
 <li><strong>2026-10-16:</strong> added blocking people and hiding questions on your phone, and that their IDs are sent with requests for questions and answers so they are left out.</li>
