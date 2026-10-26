@@ -1,3 +1,5 @@
 {
-  "ads_enabled": true
+  "ads_enabled": true,
+  "purchase_enabled": false,
+  "founding_offer_open": false
 }
