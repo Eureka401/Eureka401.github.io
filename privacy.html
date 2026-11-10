@@ -16,7 +16,7 @@
 </div></header>
 <main id="main"><div class="wrap">
 <h1>Privacy policy</h1>
-<p class="muted updated"><span>Last updated 2026-11-04.</span><span>Draft: not yet reviewed by a lawyer.</span><span>Applies to the Kyslap closed-test version for Android.</span></p>
+<p class="muted updated"><span>Last updated 2026-11-06.</span><span>Draft: not yet reviewed by a lawyer.</span><span>Applies to the Kyslap closed-test version for Android.</span></p>
 
 <div class="panel tint">
 <h2>In short</h2>
@@ -86,6 +86,7 @@
 <p>“Read the full article”, in the “Go deeper” menu, opens the Wikipedia page in a browser tab shown inside Kyslap. That tab is run by your phone’s own browser, so your browser’s cookies, sign-ins, and settings apply there, and the app cannot see what you do in it. Links to licenses and to this website open your phone’s browser directly. Those sites handle your data under their own policies.</p>
 <h3>Crash reports, to Sentry</h3>
 <p>Kyslap sends crash reports to Sentry (Functional Software, Inc.) so we can fix bugs. A report contains the error message, the app’s code trace at the moment of the crash, the app version, whether it is a test or a release build, basic device details such as the Android version and phone model, and a random ID that the crash tool creates for the installation, so we can tell how many phones hit the same bug. That ID is not linked to your name or account, and it may change if you reinstall the app.</p>
+<p>A report can also cover an error the app caught and recovered from, such as a screen that failed to open. For those, the report says where in the app it happened, the kind of error and the code trace, but not the error message. A report also lists the app’s last steps before the error, such as which bite or card number was on screen or which loading step was running, as kinds, positions and counts. Those steps never include article titles, what you read, or what you typed.</p>
 <p>We do not send the app’s database, and reports do not include your name or email address. The app removes web addresses and article titles from error messages before sending them. We turned off screenshots, session replay, performance tracing, and usage tracking, and the app removes network, navigation, and console notes from reports. We do not send your IP address on purpose and have asked Sentry not to store it (Sentry’s servers still see it when the report arrives). Sentry handles the reports under its own <a href="https://sentry.io/privacy/">privacy policy</a>.</p>
 <p>Crash reports are off unless you choose “Yes” when the app first asks, or turn on “Send crash reports” in Settings. If you say no, nothing is sent. They are sent only from release builds. You can switch them off again in Settings: errors stop being sent at once, and the native crash handler stops after you restart the app.</p>
 <h3>If you download the clip pack: GitHub</h3>
@@ -175,7 +176,8 @@
 <h2 id="changes">13. Changes to this policy</h2>
 <p>If we change this policy in a way that matters, we will update the date and describe the change below before it takes effect.</p>
 <ul>
-<li><strong>2026-11-04 (latest):</strong> the app reads a list of Wikipedia’s “Did you know” hooks from this website and keeps a copy on your phone; nothing about you is sent with the request.</li>
+<li><strong>2026-11-06 (latest):</strong> a crash report can also cover an error the app caught and recovered from (without its message), and it lists the app’s last steps before it as kinds, positions and counts, never article titles.</li>
+<li><strong>2026-11-04:</strong> the app reads a list of Wikipedia’s “Did you know” hooks from this website and keeps a copy on your phone; nothing about you is sent with the request.</li>
 <li><strong>2026-10-28:</strong> the clip pack can also download over mobile data if you turn that on in Settings (off unless you do), and the app keeps that choice on your phone.</li>
 <li><strong>2026-10-28 (later still, 2):</strong> Brainrottify also keeps, on your phone, the clip length and scene speed it has learned for each level from how long you stayed on its clips; turning the mode off clears them. None of it is sent to us.</li>
 <li><strong>2026-10-28 (later still):</strong> added what the app keeps on your phone if you turn on Brainrottify (its level, check-in answers, recall by level, the mute choice). None of it is sent to us.</li>
